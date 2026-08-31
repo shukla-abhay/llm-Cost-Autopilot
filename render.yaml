@@ -11,8 +11,8 @@ services:
       - key: DEEPSEEK_API_KEY
         sync: false
 
-staticSites:
-  - name: llm-autopilot-frontend
+  - type: static
+    name: llm-autopilot-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
