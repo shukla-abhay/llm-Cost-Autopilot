@@ -6,7 +6,8 @@ import re
 import joblib
 from pathlib import Path
 
-MODEL_PATH = Path(__file__).parent.parent.parent.parent / "models" / "classifier.pkl"
+import os
+MODEL_PATH = Path(os.getenv("MODEL_PATH", str(Path(__file__).parent.parent.parent.parent / "models" / "classifier.pkl")))
 
 HARD_KEYWORDS = [
     "analyze", "analysis", "compare", "comparison", "design", "architecture",

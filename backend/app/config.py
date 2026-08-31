@@ -3,7 +3,10 @@ Central settings file. Sab environment variables yahan se load hote hain.
 Kahin aur `os.environ` mat likhna — hamesha `settings` yahan se import karo.
 """
 
+from pathlib import Path
 from pydantic_settings import BaseSettings
+
+ENV_PATH = Path(__file__).parent.parent.parent / ".env"
 
 
 class Settings(BaseSettings):
@@ -23,7 +26,7 @@ class Settings(BaseSettings):
     env: str = "development"
 
     class Config:
-        env_file = ".env"
+        env_file = str(ENV_PATH)
         env_file_encoding = "utf-8"
 
 
